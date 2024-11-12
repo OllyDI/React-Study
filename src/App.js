@@ -105,12 +105,12 @@ function App() {
   let content = null;
   let contextControl = null;
 
+  
   if (mode == 'WELCOME') {
     content = <Article title="Welcome" body="Hello, WEB"></Article>
   } 
   else if (mode == 'READ') {
     let title, body = null;
-
     topics.map((data, index) => {
       if (data.id == id) {
         title = data.title;
@@ -139,7 +139,6 @@ function App() {
     content = <Create onCreate={(title, body) => {
       const newTopics = [...topics];
       const newTopic = {id: nextId, title: title, body: body};
-
       newTopics.push(newTopic);
       setTopics(newTopics);
       setId(nextId);
@@ -149,7 +148,6 @@ function App() {
   } 
   else if (mode == 'UPDATE') {
     let title, body = null;
-
     topics.map((data, index) => {
       if (data.id == id) {
         title = data.title;
